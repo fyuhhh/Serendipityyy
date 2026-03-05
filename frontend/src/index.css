@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-rose-50: #fff1f2;
+  --color-rose-100: #ffe4e6;
+  --color-rose-200: #fecdd3;
+  --color-rose-300: #fda4af;
+  --color-primary-soft: #ff85a2;
+  --color-primary-main: #ff4d6d;
+  --color-primary-deep: #c9184a;
+
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-outfit);
+  background: linear-gradient(135deg, #fff5f7 0%, #ffffff 50%, #ffe4e6 100%);
+  background-attachment: fixed;
+  color: #5c0d24;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(255, 182, 193, 0.2);
+}
+
+.glass-header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Custom DatePicker Aesthetic Overrides - FINAL PERFECTION */
+#datepicker-portal {
+  position: relative;
+  z-index: 999999;
+}
+
+.react-datepicker__portal {
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  display: grid !important;
+  place-items: center !important;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 999999 !important;
+}
+
+/* Aggressively kill absolute positioning calculated by Popper.js inside portal */
+.react-datepicker-popper,
+[data-popper-placement] {
+  position: static !important;
+  transform: none !important;
+  left: auto !important;
+  top: auto !important;
+  margin: 0 !important;
+  width: auto !important;
+}
+
+.react-datepicker-popper>div {
+  position: static !important;
+  transform: none !important;
+}
+
+.react-datepicker {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 3.5rem !important;
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+  font-family: var(--font-outfit) !important;
+  padding: 1.5rem !important;
+  overflow: hidden !important;
+  width: auto !important;
+  max-width: 90vw !important;
+  animation: modal-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.react-datepicker__header {
+  background: transparent !important;
+  border-bottom: 1px solid #ffe4e6 !important;
+  border-radius: 3rem 3rem 0 0 !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.react-datepicker__current-month {
+  color: #881337 !important;
+  /* rose-900 */
+  font-size: 1.875rem !important;
+  /* text-3xl */
+  font-weight: 900 !important;
+  margin-bottom: 1rem !important;
+}
+
+.react-datepicker__day-name {
+  color: #fb7185 !important;
+  /* rose-400 */
+  font-weight: 900 !important;
+  font-size: 0.875rem !important;
+  width: 3.5rem !important;
+  line-height: 3.5rem !important;
+}
+
+.react-datepicker__day {
+  color: #9f1239 !important;
+  /* rose-800 */
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+  line-height: 3.5rem !important;
+  border-radius: 1rem !important;
+  transition: all 0.2s !important;
+}
+
+.react-datepicker__day:hover {
+  background: rgba(255, 228, 230, 0.5) !important;
+  transform: scale(1.1) !important;
+}
+
+.react-datepicker__day--highlighted {
+  background: rgba(255, 241, 242, 0.8) !important;
+  color: #e11d48 !important;
+  /* rose-600 */
+  border: 2px solid #ffe4e6 !important;
+}
+
+.react-datepicker__day--selected {
+  background: #f43f5e !important;
+  /* rose-500 */
+  color: white !important;
+  box-shadow: 0 10px 15px -3px rgba(244, 63, 94, 0.3) !important;
+  transform: scale(1.1) !important;
+  font-weight: 900 !important;
+}
+
+.react-datepicker__day--outside-month {
+  color: #fecdd3 !important;
+  background: transparent !important;
+  opacity: 0.3 !important;
+  pointer-events: none !important;
+}
+
+.react-datepicker__day--today {
+  color: #881337 !important;
+  border: 2px solid #fda4af !important;
+}
+
+.react-datepicker__navigation {
+  top: 1.5rem !important;
+}
+
+.react-datepicker__navigation--previous {
+  left: 2rem !important;
+}
+
+.react-datepicker__navigation--next {
+  right: 2rem !important;
+}
+
+.react-datepicker__triangle {
+  display: none !important;
+}
+
+.react-datepicker__today-button {
+  background: rgba(255, 241, 242, 0.8) !important;
+  border-top: 1px solid #ffe4e6 !important;
+  color: #881337 !important;
+  font-weight: 900 !important;
+  font-size: 1.125rem !important;
+  padding: 1rem !important;
+  border-radius: 0 0 3rem 3rem !important;
+  transition: background 0.2s !important;
+}
+
+.react-datepicker__today-button:hover {
+  background: #ffe4e6 !important;
+}
+
+@keyframes modal-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .react-datepicker {
+    padding: 0.75rem !important;
+    max-width: 92vw !important;
+    margin: 0 auto !important;
+  }
+
+  .react-datepicker__month {
+    margin: 0 !important;
+  }
+
+  .react-datepicker__day-name,
+  .react-datepicker__day {
+    width: 11vw !important;
+    height: 11vw !important;
+    line-height: 11vw !important;
+    font-size: 1rem !important;
+    margin: 0.1rem !important;
+  }
+
+  .react-datepicker__current-month {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff5f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fecdd3;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fda4af;
+}

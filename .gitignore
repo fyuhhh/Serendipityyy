@@ -1,0 +1,12 @@
+node_modules/
+.env
+cloudflared.exe
+tunnel-credentials.json
+dist/
+build/
+.DS_Store
+*.log
+frontend/node_modules/
+backend/node_modules/
+frontend/dist/
+C:\Users\TUF\.gemini\antigravity\brain\d7493af7-d076-4a6e-a1a8-fc80d88905ff\task.md

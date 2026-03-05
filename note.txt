@@ -1,0 +1,10 @@
+#FRONTEND
+NPM RUN BUILD
+NPM START
+NPM RUN DEV
+
+#BACKEND
+node server.js
+
+#TUNNEL
+.\cloudflared.exe tunnel --config config.yml run
