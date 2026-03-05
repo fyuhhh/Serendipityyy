@@ -1,4 +1,4 @@
-tunnel: c85bc07c-0bb8-43bc-9908-6066d90a18c8
+tunnel: 12da3015-70ae-4dac-bb63-9a8e0178a4bd
 credentials-file: tunnel-credentials.json
 protocol: http2
 
@@ -6,5 +6,5 @@ ingress:
   - hostname: serendipityyy.site
     service: http://localhost:5173
   - hostname: api.serendipityyy.site
-    service: http://localhost:5000
+    service: http://localhost:5001
   - service: http_status:404
